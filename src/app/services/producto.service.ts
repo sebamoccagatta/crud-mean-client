@@ -20,7 +20,15 @@ export class ProductoService {
     return this.http.delete(this.url + 'delete-product/' + id);
   }
 
-  saveProduct(product: Producto): Observable<any> {
+  createProduct(product: Producto): Observable<any> {
     return this.http.post(this.url + 'create-product', product);
+  }
+
+  showProduct(id: string): Observable<any> {
+    return this.http.get(this.url + 'show-product/' + id)
+  }
+
+  editProduct(id: string, product: Producto): Observable<any> {
+    return this.http.put(this.url + 'edit-product/' + id, product)
   }
 }

@@ -10,6 +10,5 @@ export class Producto {
         this.category = category;
         this.locate = locate;
         this.price = price;
-
     }
 }

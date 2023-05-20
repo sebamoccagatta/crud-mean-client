@@ -42,7 +42,7 @@ export class CrearProductoComponent implements OnInit {
 
       this.productService.editProduct(this.id, product).subscribe(data => {
         this.toastr.info('El producto fue editado con exito!', 'Producto Editado!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/products']);
       }, error => {
         console.log(error);
         this.formProduct.reset();
@@ -50,19 +50,16 @@ export class CrearProductoComponent implements OnInit {
     }
     else {
       // add product
-
       console.log(product);
 
       this.productService.createProduct(product).subscribe(data => {
         this.toastr.success('El producto fue registrado con exito!', 'Producto Registrado!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/products']);
       }, error => {
         console.log(error);
         this.formProduct.reset();
       })
     }
-
-
   }
 
   isEdit() {
@@ -77,7 +74,5 @@ export class CrearProductoComponent implements OnInit {
         })
       })
     }
-
   }
-
 }
